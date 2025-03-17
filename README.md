@@ -7,7 +7,7 @@
 
 Este projeto foi desenvolvido como parte do desafio proposto pelo programa **Oracle Next Education (ONE)**. O objetivo é criar uma aplicação web interativa que permite aos usuários cadastrar nomes de amigos e realizar um sorteio de amigo secreto de maneira divertida e dinâmica.
 
-<img src="assets/badge-desafio (1).png" alt="Badget ONE">
+<img src="assets\badge-desafio.png" alt="Badget ONE">
 
 ## 🚀 Funcionalidades
 
