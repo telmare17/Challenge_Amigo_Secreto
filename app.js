@@ -1,5 +1,6 @@
-let amigos = []; // Array para armazenar os nomes
+let amigos = []; // Array para armazenar os nomes dos amigos
 
+// Função para adicionar amigo ao array
 function adicionarAmigo() {
     let nomeAmigo = document.getElementById("amigo").value.trim();
 
@@ -9,21 +10,53 @@ function adicionarAmigo() {
     }
 
     amigos.push(nomeAmigo); // Adiciona o nome ao array
-    console.log(amigos); // Exibe o array atualizado no console
 
     // Limpa o campo de entrada
     document.getElementById("amigo").value = "";
 
-    // Seleciona o elemento da lista de amigos e adiciona o novo amigo
-    let listaAmigos = document.getElementById("listaAmigos");
-    let itemLista = document.createElement("li"); // Cria um novo item de lista
-    itemLista.textContent = nomeAmigo; // Define o texto do item como o nome do amigo
-    listaAmigos.appendChild(itemLista); // Adiciona o item à lista de amigos
+    // Atualiza a lista de amigos exibida
+    atualizarListaAmigos();
+}
 
-    // Exibe um resultado na lista "resultado"
+// Função para atualizar a lista de amigos na tela
+function atualizarListaAmigos() {
+    let listaAmigos = document.getElementById("listaAmigos");
+    listaAmigos.innerHTML = ""; // Limpa a lista antes de atualizar
+
+    amigos.forEach(function(amigo) {
+        let itemLista = document.createElement("li"); // Cria um novo item de lista
+        itemLista.textContent = amigo;
+        listaAmigos.appendChild(itemLista);
+    });
+}
+
+// Função para sortear um amigo
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("Não há amigos disponíveis para sortear.");
+        return;
+    }
+
+    let indiceSorteado = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[indiceSorteado];
+
     let resultado = document.getElementById("resultado");
+    resultado.innerHTML = ""; // Limpa a área de resultados antes de exibir o sorteio
+
     let itemResultado = document.createElement("li");
-    itemResultado.textContent = "Amigo adicionado: " + nomeAmigo;
-    resultado.appendChild(itemResultado); // Adiciona o resultado à lista de resultados
+    itemResultado.textContent = "🎉 Amigo Sorteado: " + amigoSorteado + " 🎉";
+    resultado.appendChild(itemResultado);
+
+    // Lança os confetes ao sortear
+    lançarConfetti();
+}
+
+// Função para lançar confetes 🎊
+function lançarConfetti() {
+    confetti({
+        particleCount: 500, // Número de partículas
+        spread: 160,        // Espalhamento dos confetes
+        origin: { x: 0.5, y: 0.5 } // Origem no centro da tela
+    });
 }
 

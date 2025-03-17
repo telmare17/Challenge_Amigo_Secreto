@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #4B69FD;
+    --color-primary: #b53eff;
     --color-secondary: #FFF9EB;
     --color-tertiary: #C4C4C4;
     --color-button: #fe652b;
@@ -23,11 +23,31 @@ body {
     align-items: center;
 }
 
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicando fade-in ao banner e título */
+.header-banner,
+.main-title {
+    animation: fadeIn 1s ease-in-out;
+}
+
 .main-content {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
 /* Banner */
@@ -70,6 +90,22 @@ body {
     text-align: center;
 }
 
+/* Animação de entrada suave para os nomes na lista */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+ul li {
+    animation: slideIn 0.5s ease-in-out;
+}
+
 /* Contêineres de entrada e botão */
 .input-wrapper {
     display: flex;
@@ -90,6 +126,7 @@ body {
 .button-container {
     width: 300px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 /* Estilos de entrada de texto */
@@ -113,8 +150,15 @@ button {
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
 }
 
+/* Efeito ao clicar nos botões */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Botão de adicionar */
 .button-add {
     background-color: var(--color-tertiary);
     color: var(--color-text);
@@ -136,27 +180,31 @@ ul {
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: #05ae05;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
 }
 
-/* Botão de sortear título */
+/* Botão de sortear amigo */
 .button-draw {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efeito de pulso ao passar o mouse */
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+    transform: scale(1.05);
 }
 
 .button-draw img {
     margin-right: 40px;
-}
-
-.button-draw:hover {
-    background-color: var(--color-button-hover);
 }
