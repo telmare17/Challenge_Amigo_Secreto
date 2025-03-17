@@ -22,10 +22,6 @@ Este projeto foi desenvolvido como parte do desafio proposto pelo programa **Ora
 - **JavaScript (ES6+)** - Lógica de programação e interatividade
 - **Canvas-Confetti** - Biblioteca para efeito de confetes
 
-## 🎨 Demonstração
-
-<img src="assets/Gravação de Tela 2025-03-17 170236.gif" alt="Demonstração do Challenge" width="600">
-
 ## 🏗️ Como Executar o Projeto
 
 1. Clone este repositório:
