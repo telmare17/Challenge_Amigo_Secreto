@@ -26,3 +26,4 @@ function adicionarAmigo() {
     itemResultado.textContent = "Amigo adicionado: " + nomeAmigo;
     resultado.appendChild(itemResultado); // Adiciona o resultado à lista de resultados
 }
+
