@@ -35,7 +35,7 @@ Este projeto foi desenvolvido como parte do desafio proposto pelo programa **Ora
 🔹 Interface aprimorada com temas personalizáveis
 🔹 Compartilhamento do resultado do sorteio via redes sociais
 
-## 👥 Autor(a)
+## 👥 Autora
 
 - **Telma Regina** - [GitHub](https://github.com/telmare17) | [LinkedIn](https://www.linkedin.com/in/telmasreis/)
 
